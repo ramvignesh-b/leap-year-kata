@@ -10,5 +10,15 @@ describe("Leap Year", () => {
     it("should return true if divisible by 4", () => {
         const year = new Year(1996);
         expect(year.isLeapYear()).toBe(true);
-    })
+    });
+
+    it("should return true if divisble by 400", () => {
+        const year = new Year(1600);
+        expect(year.isLeapYear()).toBe(true);
+    });
+
+    it("should return false if divisible by 100 but not by 400", () => {
+        const year = new Year(1800);
+        expect(year.isLeapYear()).toBe(false);
+    });
 })
